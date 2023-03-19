@@ -10,7 +10,7 @@ create table users(
     user_email varchar(64) not null,
     user_password varchar(24) not null,
     user_role text not null default 'staff',
-    user_delete boolean not null default false,
+    user_delete boolean default false,
     user_createdat TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 

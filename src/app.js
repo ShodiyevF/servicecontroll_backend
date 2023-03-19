@@ -1,6 +1,5 @@
 require('dotenv').config({ path: `.env.${process.env.NODE_ENV || 'development'}.local` });
 
-const { errorMiddleware } = require('./middleware/error.widdleware.js');
 const setMockdata = require('./config/database.js');
 const { stream } = require('./config/logger.js');
 const CORS_OPTIONS = require('./config/cors.js');
@@ -27,7 +26,6 @@ async function app(routes) {
         app.use(cors(CORS_OPTIONS));
         app.use(express.json());
         app.use(express.urlencoded({ extended: true }));
-        app.use(errorMiddleware);
     }
 
     function initializeRoutes(routes) {
